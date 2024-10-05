@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Animation</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 200vh; /* Just to allow scrolling */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .popular__card {
+            width: 100%;
+            height: 150px;
+            margin: 20px 0;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            box-sizing: border-box;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .popular__card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .popular__grid {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.popular__card {
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.popular__content {
+  padding: 1rem;
+}
+
+.popular__card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.popular__card__header h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.popular__content p {
+  color: var(--text-light);
+}
+
+.client {
+  background-color: var(--extra-light);
+}
+
+.client__grid {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.client__card {
+  padding: 2rem;
+  background-color: var(--white);
+  border-radius: 1rem;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.client__card img {
+  max-width: 80px;
+  margin: auto;
+  margin-bottom: 1rem;
+  border-radius: 100%;
+}
+
+.client__card p {
+  text-align: center;
+  color: var(--text-dark);
+}
+
+    </style>
+</head>
+<body>
+  
+          
+      
+    <div class="container">
+        <div class="card">Card 1</div>
+        <div class="card">Card 2</div>
+        <div class="card">Card 3</div>
+        <div class="card">Card 4</div>
+        <div class="card">Card 4
+        <div class="popular__grid">
+            <div class="popular__card">
+              <img src="pexels-photo-261101.jpeg" alt="popular hotel" />
+              <div class="popular__content">
+                <div class="popular__card__header">
+                  <h4>The Plaza Hotel</h4>
+                  <h4>$499</h4>
+                </div>
+                <p>Tirupati,Andhra Pradesh,India</p>
+              </div>
+            </div>
+        </div>
+          
+        <section class="section__container popular__container">
+          <h2 class="section__header">Popular Hotels</h2>
+          <div class="popular__grid">
+            <div class="popular__card">
+              <img src="assets/pexels-photo-261101.jpeg" alt="popular hotel" />
+              <div class="popular__content">
+                <div class="popular__card__header">
+                  <h4>The Plaza Hotel</h4>
+                  <h4>$499</h4>
+                </div>
+                <p>Tirupati,Andhra Pradesh,India</p>
+              </div>
+            </div>
+            <div class="popular__card">
+              <img src="assets/hotel-2.jpg" alt="popular hotel" />
+              <div class="popular__content">
+                <div class="popular__card__header">
+                  <h4>Ritz Paris</h4>
+                  <h4>$549</h4>
+                </div>
+                <p>Nellore,Andhra Pradesh,India</p>
+              </div>
+            </div>
+            <div class="popular__card">
+              <img src="assets/hotel-3.jpg" alt="popular hotel" />
+              <div class="popular__content">
+                <div class="popular__card__header">
+                  <h4>The Peninsula</h4>
+                  <h4>$599</h4>
+                </div>
+                <p>Goa,India</p>
+              </div>
+            </div>
+            <div class="popular__card">
+              <img src="assets/hotel-4.jpg" alt="popular hotel" />
+              <div class="popular__content">
+                <div class="popular__card__header">
+                  <h4>Atlantis The Palm</h4>
+                  <h4>$449</h4>
+                </div>
+                <p>Kerala,India</p>
+              </div>
+            </div>
+            <div class="popular__card">
+              <img src="hotel-5.jpg" alt="popular hotel" />
+              <div class="popular__content">
+                <div class="popular__card__header">
+                  <h4>The Ritz-Carlton</h4>
+                  <h4>$649</h4>
+                </div>
+                <p>Chennai,Tamil Nadu,India</p>
+              </div>
+            </div>
+            <div class="popular__card">
+              <img src="assets/pexels-photo-189296.jpeg" alt="popular hotel" />
+              <div class="popular__content">
+                <div class="popular__card__header">
+                  <h4>Marina Bay Sands</h4>
+                  <h4>$549</h4>
+                </div>
+                <p>Maldives</p>
+              </div>
+            </div>
+          </div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.popular__card');
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            });
+
+            cards.forEach(popular__card => observer.observe(popular__card));
+        });
+    </script>
+</body>
+</html>
